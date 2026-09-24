@@ -1,0 +1,32 @@
+{
+  "_comment": "Copy to config.json and add your testnet keys. config.json is gitignored.",
+  "_keys": "Free testnet keys: https://testnet.binance.vision — sign in with GitHub, then 'Generate HMAC_SHA256 Key'. These are NOT your real Binance keys and control no real funds.",
+
+  "apiKey": "PASTE_TESTNET_API_KEY",
+  "apiSecret": "PASTE_TESTNET_SECRET",
+  "testnet": true,
+
+  "_sizing": "paperEquity drives position size, NOT the testnet balance. Set it to the amount you actually intend to trade so the results transfer.",
+  "paperEquity": 1000,
+  "riskPct": 0.03,
+  "maxPositionPct": 1.0,
+  "maxOpenPositions": 2,
+
+  "_strategy": "The only configuration that survived out-of-sample testing. See README.",
+  "symbols": ["BTCUSDT", "ETHUSDT"],
+  "interval": "1d",
+  "strategy": "donchian-breakout",
+  "params": {
+    "entryLen": 15,
+    "exitLen": 15,
+    "atrLen": 14,
+    "atrMult": 3,
+    "trendLen": 50,
+    "useTrendFilter": 1
+  },
+  "maxHoldBars": 10,
+
+  "_exits": "takeProfitPct null = use targetRMultiple instead. Backtest says a fixed +10% halves expectancy; +15% is roughly neutral.",
+  "takeProfitPct": null,
+  "targetRMultiple": 3
+}

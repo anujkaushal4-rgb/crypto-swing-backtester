@@ -1,0 +1,14 @@
+# Secrets — never commit API keys, even testnet ones
+live/config.json
+
+# Runtime state and logs
+live/state.json
+live/logs/
+live/STOP
+
+# Cached market data (regenerate with `node cli.js fetch`)
+data/*.json
+
+out/
+node_modules/
+.DS_Store
